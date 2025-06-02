@@ -76,10 +76,10 @@ Endpoints disponíveis em /usuarios:
 - telefone (string, opcional)
 
 #### Respostas:
-201 Created: Usuário criado com sucesso (retorna os dados do usuário sem a senha).
-409 Conflict: Email já está em uso.
-400 Bad Request: Dados de entrada inválidos (conforme as validações do DTO).
-GET /usuarios
+`201 Created`: Usuário criado com sucesso (retorna os dados do usuário sem a senha).
+`409 Conflict`: Email já está em uso.
+`400 Bad Request`: Dados de entrada inválidos (conforme as validações do DTO).
+`GET /usuarios`
 
 Descrição: Lista todos os usuários ativos.
 
