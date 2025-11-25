@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fredoka } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -20,13 +21,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="pt-PT">
-      <body className={`${inter.variable} ${fredoka.variable} font-sans antialiased`}>
-        {children}
+    <html lang="pt-BR" suppressHydrationWarning>
+      {/* Aqui está a correção! 
+         Colocámos de volta as variáveis das fontes e as classes do Tailwind.
+      */}
+      <body className={`${inter.variable} ${fredoka.variable} font-sans antialiased bg-background text-foreground`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

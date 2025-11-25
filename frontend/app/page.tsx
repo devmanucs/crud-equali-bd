@@ -5,7 +5,7 @@ import { Hero } from "@/components/landing-page/hero";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f3f4f6] font-sans text-gray-800">
+    <main className="min-h-screen bg-[#f3f4f6] dark:bg-slate-950 font-sans text-gray-800 transition-colors duration-300">
       <Header />
       <Hero />
       <Features />
